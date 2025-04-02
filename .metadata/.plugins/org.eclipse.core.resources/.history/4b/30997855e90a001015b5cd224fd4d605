@@ -1,0 +1,50 @@
+/*
+ * task_handle.c
+ *
+ *  Created on: Mar 27, 2025
+ *      Author: Pham Huy Tuyen
+ */
+
+
+void sensor_task(void *param){
+	while(1){
+		CLCD_I2C_WriteString(&LCD1, "sensor");
+		vTaskDelay(1000);
+	}
+}
+void print_task(void *param){
+	while(1){
+
+	}
+
+}
+void scan_keypad_task(void *param){
+	uint16_t btn_value;
+	while(1){
+		btn_value = process_button_pad_value(read_keypad());
+		if(btn_value){
+			switch(state)
+			{
+			case RUNNING:
+			case PASS_WORD:
+			case MENU_CONFIG:
+
+			}
+
+		}
+		}
+		vTaskDelay(20);
+	}
+}
+void menuconfig_task(void *param){
+
+	while(1){
+
+	}
+
+}
+void password_task(void *param){
+
+	while(1){
+
+}

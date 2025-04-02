@@ -1,0 +1,10 @@
+../My lib/task_handler.c:10:6:delete_data	2
+../My lib/task_handler.c:17:6:add_data	2
+../My lib/task_handler.c:25:6:set_cow	1
+../My lib/task_handler.c:33:6:sensor_task	1
+../My lib/task_handler.c:44:6:print_task	1
+../My lib/task_handler.c:54:6:sd_card_task	1
+../My lib/task_handler.c:61:6:motor_task	1
+../My lib/task_handler.c:73:6:scan_keypad_task	7
+../My lib/task_handler.c:109:6:menuconfig_task	66
+../My lib/task_handler.c:460:6:password_task	27

@@ -1,0 +1,269 @@
+22:27:10 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:27:33 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-size  final_testvht.elf 
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+22:29:20 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:31:53 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:34:00 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:39:07 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:48:58 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86304	    508	  95604	 182416	  2c890	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:53:26 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:55:04 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:55:54 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86128	    508	  95604	 182240	  2c7e0	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+22:58:04 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:01:21 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86304	    508	  95604	 182416	  2c890	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:06:10 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:09:12 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../My lib/task_handler.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"My lib/task_handler.d" -MT"My lib/task_handler.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "My lib/task_handler.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86296	    508	  95604	 182408	  2c888	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:13:02 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86128	    508	  95604	 182240	  2c7e0	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:35:03 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86128	    508	  95604	 182240	  2c7e0	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:35:40 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-size  final_testvht.elf 
+   text	   data	    bss	    dec	    hex	filename
+  86128	    508	  95604	 182240	  2c7e0	final_testvht.elf
+Finished building: default.size.stdout
+ 
+23:46:30 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'sd_card_task':
+../Core/Src/main.c:615:21: warning: unused variable 'msg_write' [-Wunused-variable]
+  615 |         const char* msg_write = "write to sd card sucessfully\n";
+      |                     ^~~~~~~~~
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86168	    508	  95644	 182320	  2c830	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:48:36 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"D:/testvht/common/ThirdParty/FreeRTOS/include" -I"D:/testvht/common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM4F" -I"D:/testvht/common/ThirdParty/SEGGER/Config" -I"D:/testvht/common/ThirdParty/SEGGER/OS" -I"D:/testvht/common/ThirdParty/SEGGER/SEGGER" -I"D:/testvht/final_testvht/My lib" -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "final_testvht.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\testvht\final_testvht\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="final_testvht.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: final_testvht.elf
+ 
+arm-none-eabi-size  final_testvht.elf 
+arm-none-eabi-objdump -h -S final_testvht.elf  > "final_testvht.list"
+   text	   data	    bss	    dec	    hex	filename
+  86128	    508	  95604	 182240	  2c7e0	final_testvht.elf
+Finished building: default.size.stdout
+ 
+Finished building: final_testvht.list
+ 
+23:50:10 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-size  final_testvht.elf 
+   text	   data	    bss	    dec	    hex	filename
+  86128	    508	  95604	 182240	  2c7e0	final_testvht.elf
+Finished building: default.size.stdout
+ 

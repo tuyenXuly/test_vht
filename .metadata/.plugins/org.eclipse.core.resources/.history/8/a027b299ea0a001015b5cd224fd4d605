@@ -1,0 +1,21 @@
+/*
+ * task_handler.h
+ *
+ *  Created on: Mar 27, 2025
+ *      Author: Admin
+ */
+
+#ifndef TASK_HANDLER_H_
+#define TASK_HANDLER_H_
+
+#include "stm32f4xx_hal.h"
+
+void sensor_task(void *param);
+void print_task(void *param);
+void scan_keypad_task(void *param);
+void menuconfig_task(void *param);
+void password_task(void *param);
+
+extern state_t curr_state;
+
+#endif /* TASK_HANDLER_H_ */

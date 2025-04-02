@@ -1,0 +1,10 @@
+23:50:10 **** Incremental Build of configuration Debug for project final_testvht ****
+make -j12 all 
+arm-none-eabi-size  final_testvht.elf 
+   text	   data	    bss	    dec	    hex	filename
+  86128	    508	  95604	 182240	  2c7e0	final_testvht.elf
+Finished building: default.size.stdout
+ 
+
+23:50:10 Build Finished. 0 errors, 0 warnings. (took 310ms)
+

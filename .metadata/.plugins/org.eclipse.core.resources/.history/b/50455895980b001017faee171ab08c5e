@@ -1,0 +1,494 @@
+/*
+ * task_handler.c
+ *
+ *  Created on: Mar 27, 2025
+ *      Author: Pham Huy Tuyen
+ */
+
+#include "main.h"
+
+void delete_data(parameter_t *data) {
+    if (data->len > 0) {
+        data->len--;
+        data->payload[data->len] = '\0';
+    }
+}
+
+void add_data(parameter_t *data, char c) {
+    if (data->len < 10) {
+        data->payload[data->len] = c;
+        data->len++;
+        data->payload[data->len] = '\0';
+    }
+}
+
+void sensor_task(void *param){
+	while(curr_state == sRunning){
+		CLCD_I2C_WriteString(&LCD1, "sensor");
+		vTaskDelay(pdMS_TO_TICKS(1000));
+	}
+	vTaskDelete(NULL);
+}
+
+void print_task(void *param){
+	while(1){
+
+	}
+
+}
+uint16_t btn_value1;
+void scan_keypad_task(void *param){
+
+	while(1){
+		btn_value1 = process_button_pad_value(read_keypad());
+		if(btn_value1){
+			printf("%d\n",btn_value1);
+			switch(curr_state)
+			{
+			case sRunning:
+				if(btn_value1 == BUTTON_A_3){
+					curr_state = sPassword;
+					CLCD_I2C_Clear(&LCD1);
+					CLCD_I2C_SetCursor(&LCD1, 3, 0);
+					CLCD_I2C_WriteString(&LCD1, "ENTER PASSWORD");
+				}
+				break;
+			case sPassword:
+				xTaskNotify(handle_password_task,(uint32_t)btn_value1 , eSetValueWithOverwrite);
+				break;
+			case sMenucofig_Setparameter:
+			case sMenuconfig_Changepassword:
+			case sMenuconfig_Saveparameter:
+				xTaskNotify(handle_menuconfig_task,(uint32_t)btn_value1 , eSetValueWithOverwrite);
+				break;
+			}// end of switch
+		}
+		vTaskDelay(pdMS_TO_TICKS(20));
+	}
+}
+
+void menuconfig_task(void *param){
+
+      static parameter_t data[4] = {{{0}, 0}};
+	  static parameter_t password = {{0},0};
+
+
+	  uint16_t btn_value;
+	  uint32_t btn_value_addr;
+
+	while(1){
+		xTaskNotifyWait(0,0,&btn_value_addr,portMAX_DELAY);
+		btn_value = (uint16_t) btn_value_addr;
+		printf("%d\n",btn_value);
+
+		switch(menu_state){
+             case sMenucofig_Setparameter:
+					switch (btn_value) {
+						case BUTTON_A_3:
+							CLCD_I2C_WriteString(&LCD1, "config state");
+							break;
+
+						case BUTTON_1:
+							add_data(&data[state], '1');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_2:
+							add_data(&data[state], '2');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_3:
+							add_data(&data[state], '3');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_A:
+							prev_state = state; // save old position
+							if (state == s1_s) state = t2_s;
+							else state--; // new postion
+							set_cow(prev_state, state);
+							break;
+
+						case BUTTON_4:
+							add_data(&data[state], '4');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_5:
+							add_data(&data[state], '5');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_6:
+							add_data(&data[state], '6');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_B:
+							prev_state = state; // save old position
+							if (state == t2_s) state = s1_s;
+							else state++; // new position
+							set_cow(prev_state, state);
+							break;
+
+						case BUTTON_7:
+							add_data(&data[state], '7');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_8:
+							add_data(&data[state], '8');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_9:
+							add_data(&data[state], '9');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_C:
+							delete_data(&data[state]);
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3+data[state].len, state);
+							CLCD_I2C_WriteString(&LCD1, " ");
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_Star:
+							CLCD_I2C_WriteString(&LCD1, "*");
+							break;
+
+						case BUTTON_0:
+							add_data(&data[state], '0');
+							printf("len=%d, payload=%s\n", data[state].len, data[state].payload);
+							CLCD_I2C_SetCursor(&LCD1, 3, state);
+							CLCD_I2C_WriteString(&LCD1, (char*)data[state].payload);
+							break;
+
+						case BUTTON_Hash:
+							CLCD_I2C_WriteString(&LCD1, "#");
+							break;
+
+						case BUTTON_D:
+							 curr_state = sMenuconfig_Changepassword;
+							 CLCD_I2C_Clear(&LCD1);
+							 CLCD_I2C_SetCursor(&LCD1, 2, 0);
+							 CLCD_I2C_WriteString(&LCD1, "change password");
+							 CLCD_I2C_SetCursor(&LCD1, 0, 1);
+							 CLCD_I2C_WriteString(&LCD1, "Enter:");
+							 CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							 break;
+
+						default:
+							 break;
+							 }// end switch
+					break;
+
+				case sMenuconfig_Saveparameter:
+					switch (btn_value) {
+							case BUTTON_A:
+								break;
+							case BUTTON_B:
+								break;
+							case BUTTON_Star:
+								 CLCD_I2C_WriteString(&LCD1, "*");
+								break;
+
+							case BUTTON_Hash:
+								 CLCD_I2C_WriteString(&LCD1, "#");
+								break;
+
+							case BUTTON_D:
+								 curr_state = sMenucofig_Setparameter;
+								 CLCD_I2C_Clear(&LCD1);
+								 CLCD_I2C_SetCursor(&LCD1, 0, 0);
+								 CLCD_I2C_WriteString(&LCD1, "s1:");
+								 CLCD_I2C_SetCursor(&LCD1, 19, state);
+								 CLCD_I2C_WriteString(&LCD1, "<");
+								 CLCD_I2C_SetCursor(&LCD1, 3, 0);
+								 CLCD_I2C_WriteString(&LCD1, (char*)data[0].payload);
+								 CLCD_I2C_SetCursor(&LCD1, 0, 1);
+								 CLCD_I2C_WriteString(&LCD1, "t1:");
+								 CLCD_I2C_SetCursor(&LCD1, 3, 1);
+								 CLCD_I2C_WriteString(&LCD1, (char*)data[1].payload);
+								 CLCD_I2C_SetCursor(&LCD1, 0, 2);
+								 CLCD_I2C_WriteString(&LCD1, "s1:");
+								 CLCD_I2C_SetCursor(&LCD1, 3, 2);
+								 CLCD_I2C_WriteString(&LCD1, (char*)data[2].payload);
+								 CLCD_I2C_SetCursor(&LCD1, 0, 3);
+								 CLCD_I2C_WriteString(&LCD1, "s1:");
+								 CLCD_I2C_SetCursor(&LCD1, 3, 3);
+								 CLCD_I2C_WriteString(&LCD1, (char*)data[3].payload);
+								 break;
+
+							 default:
+								 break;
+						 }// end switch
+					break;
+				case sMenuconfig_Changepassword:
+					switch (btn_value) {
+						case BUTTON_1:
+							add_data(&password, '1');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						case BUTTON_2:
+							add_data(&password, '2');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						case BUTTON_3:
+							add_data(&password, '3');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						case BUTTON_4:
+							add_data(&password, '4');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						case BUTTON_5:
+							add_data(&password, '5');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						 case BUTTON_6:
+							add_data(&password, '6');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						 case BUTTON_7:
+							add_data(&password, '7');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						 case BUTTON_8:
+							add_data(&password, '8');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						 case BUTTON_9:
+							add_data(&password, '9');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						 case BUTTON_C:
+							delete_data(&password);
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6+password.len, 1);
+							CLCD_I2C_WriteString(&LCD1, " ");
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							break;
+
+						 case BUTTON_Star:
+							 CLCD_I2C_WriteString(&LCD1, "*");
+							 break;
+
+						 case BUTTON_0:
+							add_data(&password, '0');
+							printf("len=%d, payload=%s\n", password.len, password.payload);
+							CLCD_I2C_SetCursor(&LCD1, 6, 1);
+							CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+							 break;
+
+						 case BUTTON_Hash:
+							 CLCD_I2C_WriteString(&LCD1, "#");
+							 break;
+
+						 case BUTTON_D:
+							 curr_state = sMenuconfig_Saveparameter;
+							 CLCD_I2C_Clear(&LCD1);
+							 CLCD_I2C_SetCursor(&LCD1, 0, 0);
+							 CLCD_I2C_WriteString(&LCD1, "Save new parameter?");
+							 CLCD_I2C_SetCursor(&LCD1, 2, 1);
+							 CLCD_I2C_WriteString(&LCD1, "YES(A)");
+							 CLCD_I2C_SetCursor(&LCD1, 10, 1);
+							 CLCD_I2C_WriteString(&LCD1, "NO(B)");
+							 break;
+
+						 default:
+							 break;
+						 }// end switch
+					break;
+	  		     }
+
+	}
+
+}
+
+
+void password_task(void *param){
+
+	static parameter_t password = {{0},0};
+
+	uint16_t btn_value;
+	uint32_t btn_value_addr;
+
+	while(1){
+		xTaskNotifyWait(0,0,&btn_value_addr,portMAX_DELAY);
+		btn_value = (uint16_t) btn_value_addr;
+		printf("%d\n",btn_value);
+
+		if (btn_value) {
+			switch (btn_value) {
+				case BUTTON_1:
+					add_data(&password, '1');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				case BUTTON_2:
+					add_data(&password, '2');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				case BUTTON_3:
+					add_data(&password, '3');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				case BUTTON_4:
+					add_data(&password, '4');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				case BUTTON_5:
+					add_data(&password, '5');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				 case BUTTON_6:
+					add_data(&password, '6');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				 case BUTTON_7:
+					add_data(&password, '7');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				 case BUTTON_8:
+					add_data(&password, '8');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				 case BUTTON_9:
+					add_data(&password, '9');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				 case BUTTON_C:
+					delete_data(&password);
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6+password.len, 1);
+					CLCD_I2C_WriteString(&LCD1, " ");
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					break;
+
+				 case BUTTON_Star:
+					 CLCD_I2C_WriteString(&LCD1, "*");
+					 break;
+
+				 case BUTTON_0:
+					add_data(&password, '0');
+					printf("len=%d, payload=%s\n", password.len, password.payload);
+					CLCD_I2C_SetCursor(&LCD1, 6, 1);
+					CLCD_I2C_WriteString(&LCD1, (char*)password.payload);
+					 break;
+
+				 case BUTTON_Hash:
+					 CLCD_I2C_WriteString(&LCD1, "#");
+					 break;
+
+				 case BUTTON_D:
+					 if (strcmp((char*)password.payload, (char*)parameter_read.password) == 0)
+					 {
+						  curr_state == sMenucofig_Setparameter;
+						  CLCD_I2C_SetCursor(&LCD1, 0, 0);
+						  CLCD_I2C_WriteString(&LCD1,"s1:");
+						  CLCD_I2C_SetCursor(&LCD1, 0, 1);
+						  CLCD_I2C_WriteString(&LCD1,"t1:");
+						  CLCD_I2C_SetCursor(&LCD1, 0, 2);
+						  CLCD_I2C_WriteString(&LCD1,"s2:");
+						  CLCD_I2C_SetCursor(&LCD1, 0, 3);
+						  CLCD_I2C_WriteString(&LCD1,"t2:");
+						  CLCD_I2C_SetCursor(&LCD1, 19, 0);
+						  CLCD_I2C_WriteString(&LCD1, "<");
+					}
+					else {
+						CLCD_I2C_Clear(&LCD1);
+						CLCD_I2C_SetCursor(&LCD1, 3, 0);
+						CLCD_I2C_WriteString(&LCD1, "ENTER PASSWORD");
+						CLCD_I2C_SetCursor(&LCD1, 3, 1);
+						memset(password.payload, 0, sizeof(password.payload));  // reset data
+						password.len = 0;  // reset length
+					}
+					 break;
+
+				 default:
+					 break;
+				 }// end switch
+
+	  }
+
+	}
+
+}
+
