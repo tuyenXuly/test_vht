@@ -1,2 +1,13 @@
-metada/
+.metada/
 testvth.asta.lock
+keypad_test/
+lcd_test/
+menu_password_test/
+menu_test/
+menu_test2/
+motor_test/
+ntc_test/
+project_testvht/
+pwm_test/
+sdcard_test/
+sensor_test/
