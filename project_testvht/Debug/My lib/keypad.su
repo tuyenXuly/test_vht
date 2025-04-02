@@ -1,2 +1,0 @@
-../My lib/keypad.c:10:10:process_button_pad_value	16	static
-../My lib/keypad.c:56:10:read_keypad	16	static

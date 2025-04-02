@@ -1,5 +1,0 @@
-../My lib/flash.c:10:6:flash_unlock	8	static
-../My lib/flash.c:15:6:flash_lock	8	static
-../My lib/flash.c:19:6:flash_erease	40	static
-../My lib/flash.c:29:6:flash_write_arr	40	static
-../My lib/flash.c:36:6:flash_read_arr	40	static
